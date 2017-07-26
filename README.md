@@ -1,4 +1,4 @@
-# RAW skin for Ableton Live
+# RAW :white_large_square:
 
 A playful, minimalist skin for Ableton Live 8/9.
 
