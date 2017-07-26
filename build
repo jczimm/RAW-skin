@@ -1,0 +1,15 @@
+#!/bin/env sh
+
+if [ ! -d "node_modules" ]; then
+  mkdir ./node_modules/
+fi
+
+if [ ! -d "node_modules/json2ableton-live-skin" ]; then
+	npm i json2ableton-live-skin
+fi
+
+# Build a Live 9 skin file from the skin map
+./node_modules/.bin/json2ask RAW.json RAW.ask
+
+# Migrate the Live 9 skin file to a Live 8 format file
+./node_modules/.bin/migrate-ask-json RAW.ask RAW-8.ask
