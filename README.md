@@ -2,6 +2,8 @@
 
 A playful, minimalist skin for Ableton Live 8/9.
 
+![Screenshot of RAW skin](screenshot.png)
+
 ## Download
 
 Download a Live 9/8-format skin file (.ask) at [Releases](https://github.com/jczimm/RAW-skin/releases).
