@@ -1,0 +1,8 @@
+{
+  "name": "RAW-skin",
+  "version": "0.0.2",
+  "private": true,
+  "dependencies": {
+    "json2ableton-live-skin": "^0.0.1"
+  }
+}

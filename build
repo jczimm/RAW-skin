@@ -1,15 +1,33 @@
 #!/bin/env sh
 
 if [ ! -d "node_modules" ]; then
-  mkdir ./node_modules/
+  npm install
 fi
 
-if [ ! -d "node_modules/json2ableton-live-skin" ]; then
-	npm i json2ableton-live-skin
+if [ ! -d "dist" ]; then
+  mkdir dist
 fi
+
+echo "> Creating Regular (Light) Skin..."
+
+# Create the Regular (Light) Version #
 
 # Build a Live 9 skin file from the skin map
-./node_modules/.bin/json2ask RAW.json RAW.ask
+./node_modules/.bin/json2ask RAW.json ./dist/RAW.ask
+echo "Created RAW.ask"
 
 # Migrate the Live 9 skin file to a Live 8 format file
-./node_modules/.bin/migrate-ask-json RAW.ask RAW-8.ask
+./node_modules/.bin/migrate-ask-json ./dist/RAW.ask ./dist/RAW-8.ask
+echo "Created RAW-8.ask"
+
+# Create the Dark Version #
+
+echo "> Creating Dark Skin..."
+
+# Build a Live 9 skin file from the skin map
+./node_modules/.bin/json2ask RAW-dark.json ./dist/RAW-dark.ask
+echo "Created RAW-dark.ask"
+
+# Migrate the Live 9 skin file to a Live 8 format file
+./node_modules/.bin/migrate-ask-json ./dist/RAW-dark.ask ./dist/RAW-dark-8.ask
+echo "Created RAW-dark-8.ask"
